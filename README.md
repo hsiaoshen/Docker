@@ -207,4 +207,24 @@ $ docker run -it --rm ubuntu:16.04 bash
 2. --rm : 退出容器后随之将其删除,一般退出后的容器是不会删除的
 3. bash: 放在软件名后的是shell命令,bash指删除后的命令为交互式shell
 
+### 列出存在的image
 
+```sh
+docker image ls (-a)
+
+// -a可以列出包括中间镜像在内的所有镜像,否则为顶级镜像
+```
+注: 出现none镜像时,属于原版被新版替换了,这种属于虚悬镜像
+```sh
+// 查看虚悬镜像
+$ docker image ls -f dangling=true
+
+// 删除这些没用的镜像
+$ docker image prune
+```
+
+### 查看镜像,数据卷还有容器所占用体积
+
+```sh
+docker system df
+```

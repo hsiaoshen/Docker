@@ -118,6 +118,11 @@ $ sudo usermod -aG docker $USER
 // 关闭终端重新登录
 ```
 
+```sh
+// 查看组
+cat /etc/group
+```
+
 8. 检测docker是否安装成功
 
 ```sh

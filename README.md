@@ -62,4 +62,29 @@ $ sudo apt-get install \
     curl \
     software-properties-common
 ```
+3. 确保下载软件的合法性,添加软件源的GPG秘钥
 
+```sh
+
+$ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+
+
+# 官方源
+# $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+4. source.list中添加docker的软件源
+
+```sh
+$ sudo add-apt-repository \
+    "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+
+
+# 官方源
+# $ sudo add-apt-repository \
+#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#    $(lsb_release -cs) \
+#    stable"
+```

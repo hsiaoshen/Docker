@@ -152,3 +152,30 @@ For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
 
 ```
+
+## 配置国内加速器
+
+### unbuntu 16.04 (systemd系统)
+
+```sh
+1. cd /etc/docker/
+2. sudo touch daemon.json // 存在无需这步
+3. vim daemon.json 
+
+// 写入如下内容(官方为主)
+
+{
+  "registry-mirrors": [
+    "https://registry.docker-cn.com"
+  ]
+}
+
+// 重新启动服务
+4. sudo systemctl daemon-reload
+5. sudo systemctl restart docker
+
+```
+
+
+
+

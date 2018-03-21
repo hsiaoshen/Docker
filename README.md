@@ -88,3 +88,32 @@ $ sudo add-apt-repository \
 #    $(lsb_release -cs) \
 #    stable"
 ```
+5. 开始安装
+
+```sh
+$ sudo apt-get update
+
+$ sudo apt-get install docker-ce
+```
+6. 启动 使用systemctl
+
+```sh
+$ sudo systemctl enable docker
+$ sudo systemctl start docker
+
+```
+7. 添加权限
+
+docker命令使用Unix socket与Docker引擎通讯.只有root组或者docker组的用户才可以访问
+
+```sh
+// 建立 docker 组
+
+$ sudo groupadd docker
+
+// 将当前用户加入 docker 组
+
+$ sudo usermod -aG docker $USER
+
+// 关闭终端重新登录
+```

@@ -161,7 +161,7 @@ For more examples and ideas, visit:
 
 ## 配置国内加速器
 
-### unbuntu 16.04 (systemd系统)
+### ubuntu 16.04 (systemd系统)
 
 ```sh
 1. cd /etc/docker/

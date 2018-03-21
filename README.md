@@ -41,3 +41,25 @@ docker是一个容器,可以在上面部署项目,但是运行环境是宿主内
 1. docker registry: 一个集中存储,分发的公开服务,供用户使用,允许用户管理镜像的服务. Docker Hub是默认的 公开服务
 2. 一个服务可有多个库,每个库包含多个标签Tag,类似一个仓库是一个软件,标签就是软件的不同版本.没有指定Tag则默认为latest
 
+## 安装
+
+### Ubuntu 16.04
+
+1. 卸载旧版本
+
+```sh
+$ sudo apt remove docker \ docker-engine \ docker.io
+```
+
+2. 由于 apt 源使用 HTTPS 以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS 传输的软件包以及 CA 证书。
+
+```sh
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+```
+

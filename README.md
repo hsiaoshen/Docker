@@ -241,7 +241,7 @@ $ docker image rm XXX
 $ docker image rm $(docker image ls -q)
 ```
 
-### 使用Dockerfile定制镜像(不同于shell脚本)
+### 使用Dockerfile定制镜像(不同于shell脚本,shell多条命令执行环境一致,dockerfile不同)
 
 Dockerfile是一个脚本文件,描述了该镜像层所有修改,安装,操作,配置命令
 
@@ -265,7 +265,7 @@ $ docker build -t nginx:v3 .
 // . 为上下文路径,本地操作(客户端)docker命令是通过rest api来和docker引擎(服务器端)进行交互,build命令实际上是在服务器端进行构建的.制定上下文路径,该命令会将该路径下的所有文件打包传至docker引擎
 ```
 
-#### Dockerfile中常用命令
+#### Dockerfile中常用命令(每一条命令执行是一个容器,所以对于同一个命令能合并就合并,减少层)
 
 1. FROM
 2. RUN

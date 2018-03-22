@@ -302,3 +302,14 @@ CMD ["redis-server"]
 
 6. ENV:设置环境变量,有点类似于代码中的const定义的变量,定义好的变量可以被其他命令拿来用,使用$envname来获取
 7. ARG:同样设置环境变量,但是容器运行时这些环境变量不存在的,不过可以作为--build-arg <参数名>=<值>来用
+8. Volue:定义匿名卷
+
+```sh
+VOLUME ["<路径1>", "<路径2>"...]
+VOLUME <路径>
+
+VOLUME /data
+
+// 可以命令行的覆盖
+$ docker run -d -v mydata:/data xxxx
+```

@@ -210,11 +210,12 @@ $ docker run -it --rm ubuntu:16.04 bash
 ### 列出存在的image
 
 ```sh
-docker image ls (-a) (-q) (--digests)
+docker image ls (-a) (-q) (--digests)(-f)
 
 // -a可以列出包括中间镜像在内的所有镜像,否则为顶级镜像
 // -q可以列出所有镜像的id
 // --digests可以列出镜像摘要
+// -f可以按满足要求的列出镜像
 ```
 注: 出现none镜像时,属于原版被新版替换了,这种属于虚悬镜像
 ```sh
@@ -233,5 +234,8 @@ docker system df
 ### 删除镜像
 
 ```sh
-$ 
+$ docker image rm XXX
+
+// 可以删除根据命令获取到的镜像
+$ docker image rm $(docker image ls -q)
 ```

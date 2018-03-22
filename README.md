@@ -254,3 +254,13 @@ $ touch Dockerfile
 // RUN echo '<h1>hello</h1>' > /usr/share/nginx/html/index.html
 ```
 
+```sh
+$ docker build [选项] <上下文路径/URL/->
+
+//example
+
+$ docker build -t nginx:v3 DockerfilePath
+
+// dockerfilePath为创建好的file路径,一般进入文件后为'.'
+```
+

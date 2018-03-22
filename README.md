@@ -259,8 +259,8 @@ $ docker build [选项] <上下文路径/URL/->
 
 //example
 
-$ docker build -t nginx:v3 DockerfilePath
+$ docker build -t nginx:v3 .
 
-// dockerfilePath为创建好的file路径,一般进入文件后为'.'
+// . 为上下文路径,本地操作(客户端)docker命令是通过rest api来和docker引擎(服务器端)进行交互,build命令实际上是在服务器端进行构建的.制定上下文路径,该命令会将该路径下的所有文件打包传至docker引擎
 ```
 

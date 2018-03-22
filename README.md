@@ -241,7 +241,7 @@ $ docker image rm XXX
 $ docker image rm $(docker image ls -q)
 ```
 
-### 使用Dockerfile定制镜像
+### 使用Dockerfile定制镜像(不同于shell脚本)
 
 Dockerfile是一个脚本文件,描述了该镜像层所有修改,安装,操作,配置命令
 

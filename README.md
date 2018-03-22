@@ -239,3 +239,17 @@ $ docker image rm XXX
 // 可以删除根据命令获取到的镜像
 $ docker image rm $(docker image ls -q)
 ```
+
+### 使用Dockerfile定制镜像
+
+Dockerfile是一个脚本文件,描述了该镜像层所有修改,安装,操作,配置命令
+
+```sh
+$ touch Dockerfile
+
+// file内容
+
+//FROM imagename
+// RUN echo '<h1>hello</h1>' > /usr/share/nginx/html/index.html
+```
+

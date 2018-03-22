@@ -292,3 +292,10 @@ ENTRYPOINT [ "curl", "-s", "http://ip.cn" ]
 
 $ docker run xxx -i
 ```
+```sh
+ENTRYPOINY ["xxx.sh"]
+
+CMD ["redis-server"]
+
+// 注意:如果使用ENTRYPOINT执行,那CMD制定的为参数可以调用
+```

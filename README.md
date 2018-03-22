@@ -1,5 +1,5 @@
 # Docker
-关于CentOs的Docker的配置使用及问题，还有项目在Docker
+关于Docker的配置使用及问题，还有项目在Docker
 
 [docker](https://yeasy.gitbooks.io/docker_practice/content/introduction/why.html)
 

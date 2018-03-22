@@ -313,3 +313,8 @@ VOLUME /data
 // 可以命令行的覆盖
 $ docker run -d -v mydata:/data xxxx
 ```
+9. EXPORT:声明运行时容器提供的服务端口,但是运行时却不会开启这个端口.
+
+```
+和docker run -p <宿主端口>:<容器端口>区分:将容器端口映射给外界访问,而expoet只是声明容器运行时端口
+```

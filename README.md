@@ -245,11 +245,12 @@ $ docker image rm $(docker image ls -q)
 Dockerfile是一个脚本文件,描述了该镜像层所有修改,安装,操作,配置命令
 
 ```sh
+// 创建文件,每一次的修改镜像是在原来的基础上再创建一个镜像层
 $ touch Dockerfile
 
 // file内容
 
-//FROM imagename
+//FROM imagename   // 若imagename为scratch,则创建的为镜像第一层
 // RUN echo '<h1>hello</h1>' > /usr/share/nginx/html/index.html
 ```
 

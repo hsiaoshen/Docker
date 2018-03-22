@@ -285,4 +285,10 @@ exec 格式：CMD ["可执行文件", "参数1", "参数2"...]
 
 // 注意:一般使用exec格式,可以解析时格式解析为json数组,所以必须使用双引号.使用shell格式会先解析为 sh -c 参数格式进行执行
 ```
+5. ENTRYPOINT:和CMD相同.使用该命令可以run时在镜像名后面可以带参数,比如-i
 
+```sh
+ENTRYPOINT [ "curl", "-s", "http://ip.cn" ]
+
+$ docker run xxx -i
+```

@@ -360,3 +360,18 @@ $ docker run -d xxx command
 
 $ docker logs ID
 ```
+#### 容器停止和重启
+
+```sh
+// 查看停止的容器
+$ docker container ls -a
+
+// 终止的容器的启动
+$ docker container start xxx
+
+// 停止容器运行
+$ docker container stop xxx
+
+// 容器退出并重启
+$ docker container restart
+```

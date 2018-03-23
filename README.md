@@ -321,3 +321,7 @@ $ docker run -d -v mydata:/data xxxx
 10. WOEKDIR:指定之后各层的工作目录(或者叫当前目录)
 11. USER <用户名>:改变之后层run,CMD等命令执行的身份,建议使用gosu来替代
 12. ONBUILD 命令:不会被执行,只有在当前基础上构建下一层时才会被执行
+
+```
+适用于多个项目共用同一个Dockerfile时,只需修改基础镜像
+```

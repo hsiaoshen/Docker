@@ -328,6 +328,13 @@ $ docker run -d -v mydata:/data xxxx
 适用于多个项目共用同一个Dockerfile时,只需修改基础镜像
 ```
 
+### 查看终止的容器和运行中的容器
+
+```sh
+// -a是查看终止的容器列表
+$ docker container ls(-a)
+```
+
 ### 启动容器
 
 #### 基于镜像上新建一个容器
@@ -399,4 +406,16 @@ $ docker load
 
 // 导入本地快照文件(只保留当时快照状态)
 $ cat name.tar | docker import - imagename:tags 
+```
+### 容器的删除
+
+```sh
+// 指定一个终止的删除
+$ docker container rm xxx
+
+// 删除所有的终止容器
+$ docker container prune
+
+// 删除运行的容器
+$ docker container rm -f xxx
 ```

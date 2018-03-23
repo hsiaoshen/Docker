@@ -346,3 +346,17 @@ $ docker run -it xxx bash
 7. 执行完毕后容器被终止
 
 #### 停止的容器重新启动
+
+```sh
+$ docker container start xx
+```
+
+#### 让容器后台执行(-d参数)
+
+所谓的后台执行:不会在宿主机上直接输出结果,而是输出一段containerID,可以通过docker logs ID来查看输出
+
+```sh
+$ docker run -d xxx command
+
+$ docker logs ID
+```

@@ -419,3 +419,50 @@ $ docker container prune
 // 删除运行的容器
 $ docker container rm -f xxx
 ```
+### 私有仓库创建和推送
+
+#### 安装docker-registry
+
+```sh
+ $ docker run -d \
+    -p 5000:5000 \
+    -v /opt/data/registry:/var/lib/registry \
+    registry
+ // -v可以把镜像文件存储到本地指定的路径里,格式为 -v 宿主路径:源路径
+```
+#### 标记镜像
+
+```sh
+$ docker tag IMAGE[:TAG] [REGISTRY_HOST[:REGISTRY_PORT]/]REPOSITORY[:TAG]。
+
+// 参数包括镜像名:tag,registry地址以及仓库中的名:tag
+```
+
+#### 推送镜像
+
+```sh
+docker push registryhost:port/xxx
+```
+
+#### 查看仓库中的镜像
+
+```sh
+$ curl 127.0.0.1:5000/v2/_catalog
+```
+
+#### 对于内网的地址无法推送
+
+原因:docker不支持非https的推送
+
+```sh
+// systemd系统
+// /etc/docker/daemon.json
+{
+  "registry-mirror": [
+    "https://registry.docker-cn.com"
+  ],
+  "insecure-registries": [
+    "192.168.199.100:5000"
+  ]
+}
+```

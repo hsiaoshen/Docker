@@ -351,7 +351,7 @@ $ docker run -it xxx bash
 $ docker container start xx
 ```
 
-#### 让容器后台执行(-d参数)
+### 让容器后台执行(-d参数)
 
 所谓的后台执行:不会在宿主机上直接输出结果,而是输出一段containerID,可以通过docker logs ID来查看输出
 
@@ -360,7 +360,7 @@ $ docker run -d xxx command
 
 $ docker logs ID
 ```
-#### 进入后台执行的容器
+### 进入后台执行的容器
 
 ```sh
 // 查看运行中的容器,得到ID
@@ -371,8 +371,9 @@ $ docker attach ID
 
 // 使用exec进入,exit退出容器还在后台执行
 $ docker exec -it ID bash
+```
 
-#### 容器停止和重启
+### 容器停止和重启
 
 ```sh
 // 查看停止的容器
@@ -386,4 +387,16 @@ $ docker container stop xxx
 
 // 容器退出并重启
 $ docker container restart
+```
+### 容器导入和导出
+
+```sh
+// 导出容器快照到本地文件
+$ docker export ID > name.tar
+
+// 导入存储文件(包含完整的历史记录和元数据)
+$ docker load
+
+// 导入本地快照文件(只保留当时快照状态)
+$ cat name.tar | docker import - imagename:tags 
 ```

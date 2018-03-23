@@ -360,6 +360,18 @@ $ docker run -d xxx command
 
 $ docker logs ID
 ```
+#### 进入后台执行的容器
+
+```sh
+// 查看运行中的容器,得到ID
+$ docker container ls 
+
+// 使用attach,exit退出容器会停止运行
+$ docker attach ID
+
+// 使用exec进入,exit退出容器还在后台执行
+$ docker exec -it ID bash
+
 #### 容器停止和重启
 
 ```sh
